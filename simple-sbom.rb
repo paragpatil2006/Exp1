@@ -12,8 +12,8 @@ require 'fileutils'
   @branch = ARGV[3]
   @pwd = `pwd`.chop
   @token = ARGV[4]
-  @tmp = ARGV[5]
-  @syftpath = ARGV[6]
+  @tmp = /tmp
+  @syftpath = syft
 
   Dir.chdir @pwd
   cmd = "curl -H 'Authorization: token #{@token}' -L 'https://github.com/#{@org}/#{@repo_name}/#{@compression}/#{@branch}' | tar x -C '#{@tmp}'"
